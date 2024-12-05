@@ -6,15 +6,6 @@
     transition: all 0.3s ease;
 }
 
-/* General Styles */
-body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #e6eff3, #d2e3e7); /* Soft gradient background */
-    color: #333; /* Dark text color for readability */
-    line-height: 1.6;
-    padding: 0;
-}
-
 /* Color Palette */
 :root {
     --primary-color: #0d47a1; /* Deep Blue */
@@ -44,11 +35,11 @@ header {
     justify-content: space-between;  /* Space between name and menu */
     align-items: center;  /* Align items vertically */
     width: 100%; /* Ensure header takes full width */
-    position: fixed; /* Make header fixed at the top */
     top: 0;
     left: 0;
     z-index: 1000;  /* Ensure it stays on top of other content */
 }
+
 
 /* Branding Section (Name and designation) */
 header h1 {
@@ -91,32 +82,15 @@ header nav ul li a:hover {
     border: 2px solid var(--secondary-color); /* Border on hover */
 }
 
-/* Adjust for fixed header */
+
+/* General Styles */
 body {
-    padding-top: 60px; /* Reduced top padding to match the smaller header */
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #e6eff3, #d2e3e7); /* Soft gradient background */
+    color: #333; /* Dark text color for readability */
+    line-height: 1.6;
+    padding: 0;
 }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    header h1 {
-        font-size: 1.6rem; /* Even smaller font size on smaller screens */
-    }
-
-    header nav ul {
-        flex-direction: column;
-        margin-top: 1rem;
-    }
-
-    header nav ul li {
-        margin-bottom: 1rem;
-    }
-}
-
 
 /* Main Content Styles */
 main {
@@ -179,8 +153,8 @@ section h2 {
 
 /* Footer Styles */
 footer {
-    background: var(--dark-background); /* Dark footer background */
-    color: #fff;
+    background: var(--background-color); /* Light footer background */
+    color: #000000;
     text-align: center;
     padding: 1.5rem 0;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
@@ -216,6 +190,7 @@ footer p {
 .contact-page i {
     margin-right: 10px;
 }
+
 
 /* Hover Effects for Links */
 a:hover, .card a:hover {
@@ -266,7 +241,7 @@ section h2 {
     padding-bottom: 10px;
 }
 
-/* Button Styles */
+/* Button Styles*/
 button {
     background-color: var(--primary-color);
     color: white;
@@ -282,7 +257,6 @@ button:hover {
     background-color: var(--button-hover-color);
 }
 
-/* Button styles */
 .btn-primary {
     display: inline-block;
     background-color: var(--primary-color);
@@ -293,11 +267,6 @@ button:hover {
     font-size: 1rem;
     transition: background-color 0.3s ease;
     border: 2px solid transparent;
-}
-
-.btn-primary:hover {
-    background-color: var(--button-hover-color);
-    border-color: var(--primary-color);
 }
 
 
@@ -329,28 +298,49 @@ iframe {
     border: none;
 }
 
-/* CV Section Styling */
-#cv-section {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: var(--background-color);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    animation: slideIn 1s ease-out;
+/* Responsive Design */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header nav ul {
+        padding: 1rem;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-page a {
+        font-size: 1.1rem;
+    }
+
+    .card {
+        padding: 1.2rem;
+    }
 }
 
-/* Subtitle for the CV */
-#cv-section h2 {
-    color: var(--primary-color);
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    border-bottom: 3px solid var(--primary-color);
-    padding-bottom: 10px;
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 1.6rem; /* Even smaller font size on smaller screens */
+    }
+
+    header nav ul {
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    header nav ul li {
+        margin-bottom: 1rem;
+    }
 }
 
-
-/* Responsive Styles */
 @media (max-width: 1024px) {
     header nav ul {
         flex-direction: column;
@@ -379,24 +369,21 @@ iframe {
     }
 }
 
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 2.5rem;
-    }
 
-    header nav ul {
-        padding: 1rem;
-    }
+/* For Image and its formatting */
+#about .about-content {
+    display: flex; /* Arrange image and text side by side */
+    align-items: center; /* Center items vertically */
+    gap: 20px; /* Space between the image and text */
+}
 
-    section h2 {
-        font-size: 1.8rem;
-    }
+#about .about-image {
+    max-width: 200px; /* Set a maximum width for the image */
+    border-radius: 10px; /* Add rounded corners to the image */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better aesthetics */
+}
 
-    .contact-page a {
-        font-size: 1.1rem;
-    }
-
-    .card {
-        padding: 1.2rem;
-    }
+#about p {
+    flex: 1; /* Allow the text to take the remaining space */
+    line-height: 1.6; /* Improve text readability */
 }
